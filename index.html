@@ -9,7 +9,30 @@
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   </head>
   <body>
-    <h1>Space Pong</h1>
+    <h1>PONG</h1>
+    <div class="container-score">
+      <div class="container-score-player-1">
+        <h2>Player 1</h2>
+        <div class="score-player-1">000</div>
+      </div>
+      <div class="container-score-player-2">
+        <h2>Player 2</h2>
+        <div class="score-player-2">000</div>
+      </div>
+    </div>
+
+    <div class="wrapper-canvas">
+      <div id="canvas"></div>
+      <div class="background-bars">
+        <div class="bar-1"></div>
+        <div class="bar-2"></div>
+        <div class="bar-3"></div>
+        <div class="bar-1"></div>
+      </div>
+    </div>
+
+    <script src="/src/ball.js"></script>
+    <script src="/src/player.js"></script>
     <script src="/src/game.js"></script>
     <script src="/src/main.js"></script>
   </body>

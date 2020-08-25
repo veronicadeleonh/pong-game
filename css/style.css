@@ -1,12 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 html,
 body {
   height: 100%;
+  color: #fff;
 }
 
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #020314;
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+}
+
+h1 {
+  font-size: 4.5em;
+  color: #7172fb;
+  letter-spacing: 0.1em;
+  -webkit-text-stroke: 0.5px #fff;
+}
+
+canvas {
+  border: 3px solid #cac7c7;
+}
+
+.container-score {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.score-player-1,
+.score-player-2 {
+  font-size: 2em;
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+  width: 100vw;
+  height: 50px;
+}
+
+.bar-1 {
+  background-color: #1a1d72;
+}
+
+.bar-2 {
+  background-color: #4f53b3;
+}
+
+.bar-3 {
+  background-color: #383ca2;
 }
