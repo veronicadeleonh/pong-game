@@ -32,7 +32,16 @@ h1 {
 }
 
 canvas {
+  background-color: #020314;
   border: 3px solid #cac7c7;
+  position: relative;
+  z-index: 3;
+}
+
+.background-bars {
+  position: relative;
+  top: 35vh;
+  z-index: 1;
 }
 
 .container-score {

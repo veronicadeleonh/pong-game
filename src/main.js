@@ -4,7 +4,7 @@ let mode = 0;
 function setup() {
   createCanvas(800, 600);
   //canvas.parent("canvas");
-  background("#020314");
+  //   background(255);
   game.setupGame();
 }
 
