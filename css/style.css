@@ -17,6 +17,13 @@ body {
   align-items: center;
 }
 
+.stars {
+  background-color: #13a0d5;
+  border: 1px solid #022b49;
+  position: fixed;
+  border-radius: 50%;
+}
+
 h1 {
   font-size: 4.5em;
   color: #7172fb;

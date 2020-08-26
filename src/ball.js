@@ -5,8 +5,8 @@ class Ball {
     this.x = width / 2;
     this.y = height / 2;
 
-    this.newX = (Math.random() * width) / 70;
-    this.newY = (Math.random() * width) / 70;
+    this.velocityX = (Math.random() * width) / 70;
+    this.velocityY = (Math.random() * width) / 70;
   }
 
   drawBall() {
@@ -16,18 +16,22 @@ class Ball {
   }
 
   moveBall() {
-    this.x += this.newX;
-    this.y += this.newY;
+    this.x -= this.velocityX;
+    this.y -= this.velocityY;
 
-    // let oneOrZero = Math.random() > 0.5 ? 1 : 0;
-    // if (oneOrZero === 1) {
-    //   this.x += this.newX;
-    //   this.y += this.newY;
-    // } else {
-    //   this.x -= this.newX;
-    //   this.y -= this.newY;
-    // }
+    // randomize the initial ball direction
+
+    if (this.y - this.radius < 0 || this.y + this.radius > height) {
+      this.velocityY = -this.velocityY;
+    }
   }
 
-  bounceBall() {}
+  bounceBall() {
+    if (this.x < this.radius || this.x > width - this.radius) {
+      this.newX *= -1;
+    }
+    if (this.y < this.radius || this.y > height - this.radius) {
+      this.newY *= -1;
+    }
+  }
 }

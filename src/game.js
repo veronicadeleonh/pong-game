@@ -11,7 +11,7 @@ class Game {
     this.player1 = new Player();
 
     this.player2 = new Player();
-    this.player2.x = width - 45; // change 45 into variable
+    this.player2.x = width - this.player2.width * 3;
 
     this.ball = new Ball();
   }
@@ -25,7 +25,8 @@ class Game {
 
     this.ball.drawBall();
     this.ball.moveBall();
-    // this.ball.bounceBall();
+    this.ball.bounceBall();
+    // this.ball.paddleCollision();
 
     this.drawLine();
   }

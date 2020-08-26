@@ -21,8 +21,7 @@ class Player {
 
   moveUp() {
     this.acc -= this.speed;
-
-    console.log(this.speed);
+    // console.log(this.speed);
   }
 
   moveDown() {
