@@ -69,7 +69,7 @@ class Ball {
   }
 
   playerWins() {
-    if (game.player1.score === 500 || game.player2.score === 500) {
+    if (game.player1.score === 1000 || game.player2.score === 1000) {
       this.stopBall();
     }
   }
