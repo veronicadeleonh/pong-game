@@ -5,8 +5,8 @@ class Ball {
     this.x = width / 2;
     this.y = height / 2;
 
-    this.velocityX = (Math.random() * width) / 70;
-    this.velocityY = (Math.random() * width) / 70;
+    this.speedX = (Math.random() * width) / 70;
+    this.speedY = (Math.random() * width) / 70;
   }
 
   drawBall() {
@@ -16,22 +16,61 @@ class Ball {
   }
 
   moveBall() {
-    this.x -= this.velocityX;
-    this.y -= this.velocityY;
+    this.x += this.speedX;
+    this.y += this.speedY;
 
-    // randomize the initial ball direction
-
+    // ball hits top border || ball his bottom border
     if (this.y - this.radius < 0 || this.y + this.radius > height) {
-      this.velocityY = -this.velocityY;
+      this.speedY *= -1;
     }
   }
 
-  bounceBall() {
-    if (this.x < this.radius || this.x > width - this.radius) {
-      this.newX *= -1;
+  collisionWithPaddle() {
+    if (
+      this.y > game.player1.y &&
+      this.y < game.player1.y + game.player1.height &&
+      this.x - this.radius - game.player1.width <= game.player1.x
+    ) {
+      this.speedX *= -1;
     }
-    if (this.y < this.radius || this.y > height - this.radius) {
-      this.newY *= -1;
+    if (
+      this.y > game.player2.y &&
+      this.y < game.player2.y + game.player2.height &&
+      this.x + this.radius >= game.player2.x
+    ) {
+      this.speedX *= -1;
+    }
+  }
+
+  resetBall() {
+    this.x = width / 2;
+    this.y = height / 2;
+
+    this.speedX = (Math.random() * width) / 70;
+    this.speedY = (Math.random() * width) / 70;
+  }
+
+  stopBall() {
+    this.speedX = 0;
+    this.speedY = 0;
+  }
+
+  scoreGame() {
+    if (this.x - this.radius * 2 > width) {
+      this.resetBall();
+      game.player1.score += 50;
+      game.player2.score -= 50;
+    }
+    if (this.x + this.radius * 2 < 0) {
+      this.resetBall();
+      game.player2.score += 50;
+      game.player1.score -= 50;
+    }
+  }
+
+  playerWins() {
+    if (game.player1.score === 1500 || game.player2.score === 1500) {
+      this.stopBall();
     }
   }
 }

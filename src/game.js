@@ -20,14 +20,16 @@ class Game {
     this.player1.drawPlayer();
     this.player2.drawPlayer();
 
-    this.player1.playerEase();
-    this.player2.playerEase();
-
     this.ball.drawBall();
     this.ball.moveBall();
-    this.ball.bounceBall();
-    // this.ball.paddleCollision();
+    this.ball.scoreGame();
+    this.ball.collisionWithPaddle();
+    this.ball.playerWins();
 
     this.drawLine();
+
+    // DOM assignments
+    document.querySelector(".score-player-1").innerText = this.player1.score;
+    document.querySelector(".score-player-2").innerText = this.player2.score;
   }
 }

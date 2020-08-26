@@ -6,10 +6,6 @@ class Player {
     this.x = this.width * 2;
     this.y = height / 2 - this.height / 2;
 
-    this.acc = 0;
-    this.speed = 5;
-    this.maxSpeed = 15;
-
     this.score = 0;
   }
 
@@ -20,21 +16,15 @@ class Player {
   }
 
   moveUp() {
-    this.acc -= this.speed;
-    // console.log(this.speed);
+    if (this.y > 0) {
+      this.y -= 10;
+    }
   }
 
   moveDown() {
-    this.acc += this.speed;
-  }
-
-  stopMov() {
-    this.acc === 0;
-  }
-
-  playerEase() {
-    this.acc = constrain(this.acc, -this.maxSpeed, this.maxSpeed);
-    this.y += this.acc;
-    this.y = constrain(this.y, 0, height - this.height);
+    if (this.y < height - this.height) {
+      this.y += 10;
+      // console.log(this.y);
+    }
   }
 }

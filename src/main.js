@@ -25,3 +25,8 @@ function draw() {
     game.player2.moveDown();
   }
 }
+
+function keyPressed() {
+  if (keyCode === 13) {
+  }
+}
