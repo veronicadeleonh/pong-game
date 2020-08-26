@@ -5,8 +5,8 @@ class Ball {
     this.x = width / 2;
     this.y = height / 2;
 
-    this.speedX = (Math.random() * width) / 70;
-    this.speedY = (Math.random() * width) / 70;
+    this.speedX = 10;
+    this.speedY = 10;
   }
 
   drawBall() {
@@ -31,14 +31,14 @@ class Ball {
       this.y < game.player1.y + game.player1.height &&
       this.x - this.radius - game.player1.width <= game.player1.x
     ) {
-      this.speedX *= -1;
+      this.speedX *= -1.2;
     }
     if (
       this.y > game.player2.y &&
       this.y < game.player2.y + game.player2.height &&
       this.x + this.radius >= game.player2.x
     ) {
-      this.speedX *= -1;
+      this.speedX *= -1.2;
     }
   }
 
@@ -69,7 +69,7 @@ class Ball {
   }
 
   playerWins() {
-    if (game.player1.score === 1500 || game.player2.score === 1500) {
+    if (game.player1.score === 1000 || game.player2.score === 1000) {
       this.stopBall();
     }
   }
