@@ -6,10 +6,12 @@ let hidden = true;
 let pxlfont;
 
 function preload() {
-  pxlfont = loadFont("p5-fonts/pixelfont.ttf");
+  pxlfont = loadFont("assets/pixelfont.ttf");
+  interPlsong = loadSound("assets/interplanetary.mp3");
 }
 
 function setup() {
+  // interPlsong.loop();
   createCanvas(800, 600);
   background("#020314");
   start.setupStart();
@@ -50,6 +52,7 @@ function draw() {
 
     // Game over
     if (mode == 2) {
+      //  interPlsong.stop();
       start.drawGameOver();
     }
   }

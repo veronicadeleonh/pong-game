@@ -45,7 +45,7 @@ class Start {
       textFont(pxlfont, 20);
       textAlign(CENTER);
       textSize(35);
-      text(`${player2Name} WON!`, width / 2, 250);
+      text(`${player2Name} WON!`, width / 2, 300);
       textSize(20);
       text(
         `Press R to Restart match\nor press S to Start again`,
