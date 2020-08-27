@@ -39,7 +39,7 @@ canvas {
 }
 
 .background-bars {
-  position: relative;
+  position: fixed;
   top: 50vh;
   z-index: 1;
 }

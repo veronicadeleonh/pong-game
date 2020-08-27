@@ -5,8 +5,8 @@ class Ball {
     this.x = width / 2;
     this.y = height / 2;
 
-    this.speedX = 10;
-    this.speedY = 10;
+    this.speedX = 13;
+    this.speedY = 13;
   }
 
   drawBall() {
@@ -16,6 +16,7 @@ class Ball {
   }
 
   moveBall() {
+    console.log("Draw game after restart");
     this.x += this.speedX;
     this.y += this.speedY;
 

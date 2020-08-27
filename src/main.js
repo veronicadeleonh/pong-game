@@ -46,7 +46,6 @@ function draw() {
     // Game over
     if (mode == 2) {
       start.drawGameOver();
-      game.stopBall();
     }
   }
 }
@@ -56,6 +55,7 @@ function keyPressed() {
     mode = 1;
   }
   if (keyCode === 82 && mode == 2) {
-    mode = 0;
+    mode = 1;
+    game.setupGame();
   }
 }
