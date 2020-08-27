@@ -64,7 +64,13 @@ function keyPressed() {
     game.setupGame();
   }
   if (keyCode === 83 && mode == 2) {
-    mode = 0;
-    // game.setupGame();
+    let nameStr = "";
+
+    document.querySelector("canvas").style.visibility = "hidden";
+    document.querySelector(".lets-play-btn").style.visibility = "visible";
+    document.querySelector(".input-player-1").style.visibility = "visible";
+    document.querySelector(".input-player-2").style.visibility = "visible";
+    document.querySelector(".input-player-1").value = nameStr;
+    document.querySelector(".input-player-1").value = nameStr;
   }
 }
