@@ -31,11 +31,33 @@ h1 {
   -webkit-text-stroke: 0.5px #fff;
 }
 
+h2 {
+  font-size: 1em;
+  text-align: center;
+}
+
 canvas {
   background-color: #020314;
   border: 3px solid #cac7c7;
   position: relative;
   z-index: 3;
+}
+
+input {
+  height: 50px;
+  width: 200px;
+  background-color: #020314;
+  border: 0.5px solid #ffffff85;
+  color: #fff;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+input:focus,
+input:active {
+  outline: #ee5153 solid 1px;
+  box-shadow: 2px 2px 2px 3px #ee51538f;
 }
 
 .background-bars {
@@ -53,6 +75,8 @@ canvas {
 .score-player-1,
 .score-player-2 {
   font-size: 2em;
+  text-align: center;
+  margin: 10%;
 }
 
 .bar-1,
@@ -72,4 +96,21 @@ canvas {
 
 .bar-3 {
   background-color: #383ca2;
+}
+
+.lets-play-btn {
+  font-family: "Press Start 2P", cursive;
+  font-size: 16px;
+  background-color: #ee5153;
+  width: 250px;
+  height: 80px;
+  border-radius: 3px;
+  color: #fff;
+  border: 0.5px solid #fff;
+}
+
+.lets-play-btn:hover,
+.lets-play-btn:active {
+  background-color: #cf3537;
+  color: #fff;
 }

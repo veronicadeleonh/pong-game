@@ -1,10 +1,15 @@
 class Game {
   constructor() {}
 
-  drawLine() {
+  drawBoard() {
     stroke("rgba(255,255,255,0.15)");
     strokeWeight(3);
     line(width / 2, height - 20, width / 2, 20);
+
+    fill("rgba(255,255,255,0)");
+    stroke("rgba(255,255,255,0.15)");
+    strokeWeight(3);
+    ellipse(width / 2, height / 2, 80);
   }
 
   setupGame() {
@@ -26,7 +31,7 @@ class Game {
     this.ball.collisionWithPaddle();
     this.ball.playerWins();
 
-    this.drawLine();
+    this.drawBoard();
 
     // DOM assignments
     document.querySelector(".score-player-1").innerText = this.player1.score;
