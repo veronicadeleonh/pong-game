@@ -3,6 +3,11 @@ const start = new Start();
 
 let mode = 0;
 let hidden = true;
+let pxlfont;
+
+function preload() {
+  pxlfont = loadFont("p5-fonts/pixelfont.ttf");
+}
 
 function setup() {
   createCanvas(800, 600);
@@ -57,5 +62,9 @@ function keyPressed() {
   if (keyCode === 82 && mode == 2) {
     mode = 1;
     game.setupGame();
+  }
+  if (keyCode === 83 && mode == 2) {
+    mode = 0;
+    // game.setupGame();
   }
 }
