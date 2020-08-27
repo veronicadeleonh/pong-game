@@ -8,9 +8,9 @@ class Game {
   }
 
   setupGame() {
-    this.player1 = new Player();
+    this.player1 = new Player("#08B008");
 
-    this.player2 = new Player();
+    this.player2 = new Player("#D39D12");
     this.player2.x = width - this.player2.width * 3;
 
     this.ball = new Ball();

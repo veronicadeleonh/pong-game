@@ -1,7 +1,8 @@
 class Player {
-  constructor() {
+  constructor(color) {
     this.width = 15;
     this.height = 120;
+    this.color = color;
 
     this.x = this.width * 2;
     this.y = height / 2 - this.height / 2;
@@ -11,7 +12,7 @@ class Player {
 
   drawPlayer() {
     noStroke();
-    fill("#08B008");
+    fill(this.color);
     rect(this.x, this.y, this.width, this.height);
   }
 

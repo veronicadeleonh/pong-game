@@ -1,36 +1,52 @@
 const game = new Game();
+const start = new Start();
+
 let mode = 0;
+let hidden = true;
 
 function setup() {
   createCanvas(800, 600);
-  //canvas.parent("canvas");
   background("#020314");
+  start.setupStart();
   game.setupGame();
 }
 
 function draw() {
   clear();
-  if (mode == 0) {
-    text("Press ENTER to start", 50, 50);
-    fill(255);
+  if (hidden) {
+    document.querySelector("canvas").style.visibility = "hidden";
   }
 
-  if (mode == 1) {
-    game.drawGame();
+  // Start page
+  else {
+    if (mode == 0) {
+      start.drawStart();
+    }
 
-    if (keyIsDown(87)) {
-      game.player1.moveUp();
-      // console.log("jello");
+    // Game
+    if (mode == 1) {
+      game.drawGame();
+
+      if (keyIsDown(87)) {
+        game.player1.moveUp();
+        // console.log("jello");
+      }
+      if (keyIsDown(83)) {
+        game.player1.moveDown();
+      }
+      if (keyIsDown(38)) {
+        game.player2.moveUp();
+        // console.log("jello");
+      }
+      if (keyIsDown(40)) {
+        game.player2.moveDown();
+      }
     }
-    if (keyIsDown(83)) {
-      game.player1.moveDown();
-    }
-    if (keyIsDown(38)) {
-      game.player2.moveUp();
-      // console.log("jello");
-    }
-    if (keyIsDown(40)) {
-      game.player2.moveDown();
+
+    // Game over
+    if (mode == 2) {
+      start.drawGameOver();
+      game.stopBall();
     }
   }
 }
@@ -38,5 +54,8 @@ function draw() {
 function keyPressed() {
   if (keyCode === 13) {
     mode = 1;
+  }
+  if (keyCode === 82 && mode == 2) {
+    mode = 0;
   }
 }
