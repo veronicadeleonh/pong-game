@@ -5,8 +5,8 @@ class Ball {
     this.x = width / 2;
     this.y = height / 2;
 
-    this.speedX = 13;
-    this.speedY = 13;
+    this.speedX = 10;
+    this.speedY = 10;
   }
 
   drawBall() {
@@ -17,7 +17,7 @@ class Ball {
 
   moveBall() {
     console.log("Draw game after restart");
-    this.x += this.speedX;
+    this.x -= this.speedX;
     this.y += this.speedY;
 
     // ball hits top border || ball his bottom border
@@ -47,8 +47,8 @@ class Ball {
     this.x = width / 2;
     this.y = height / 2;
 
-    this.speedX = (Math.random() * width) / 70;
-    this.speedY = (Math.random() * width) / 70;
+    this.speedX = (Math.random() * width) / 50;
+    this.speedY = (Math.random() * width) / 50;
   }
 
   stopBall() {
@@ -70,7 +70,7 @@ class Ball {
   }
 
   playerWins() {
-    if (game.player1.score === 100 || game.player2.score === 100) {
+    if (game.player1.score === 250 || game.player2.score === 250) {
       this.stopBall();
       mode = 2;
     }

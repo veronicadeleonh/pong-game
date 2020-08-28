@@ -7,7 +7,7 @@ let pxlfont;
 
 function preload() {
   pxlfont = loadFont("assets/pixelfont.ttf");
-  interPlsong = loadSound("assets/interplanetary.mp3");
+  // interPlsong = loadSound("assets/interplanetary.mp3");
 }
 
 function setup() {
@@ -67,6 +67,8 @@ function keyPressed() {
     game.setupGame();
   }
   if (keyCode === 83 && mode == 2) {
+    game.player1.score = 0;
+    game.player2.score = 0;
     let nameStr = "";
 
     document.querySelector("canvas").style.visibility = "hidden";
@@ -74,6 +76,13 @@ function keyPressed() {
     document.querySelector(".input-player-1").style.visibility = "visible";
     document.querySelector(".input-player-2").style.visibility = "visible";
     document.querySelector(".input-player-1").value = nameStr;
-    document.querySelector(".input-player-1").value = nameStr;
+    document.querySelector(".input-player-2").value = nameStr;
+    document.querySelector(".score-player-1").innerText = game.player1.score;
+    document.querySelector(".score-player-2").innerText = game.player2.score;
+    document.querySelector(".name-player-1").innerHTML = "Player 1";
+    document.querySelector(".name-player-2").innerHTML = "Player 2";
+
+    mode = 0;
+    game.setupGame();
   }
 }
